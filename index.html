@@ -12,12 +12,13 @@
 
     <title> Bible Quiz for Kids</title>
 </head> 
-<body id="hero-image">
+<body class="container">
         <h1 class="heading"> Bible Quiz for Kids</h1>
     
-    <div class="container"> 
-        <p class="username"> Enter your username</p>
+    <div class="username"> 
+        <p> Enter your username</p>
         <input type="text" id="username" name="username" required>
+    </div>       
 
         <div id="question-container"> 
             <div id="question">Question</div>
@@ -27,19 +28,19 @@
                 <button>Answer 3</button>
                 <button>Answer 4</button>
             </div>    
-        </div>
+        
+            <div class="controls">
+                <button id="start-btn">Start</button>
+                <button id="next-btn">Next</button>
+            </div>
 
-        <div class="controls">
-            <button id="start-btn">Start</button>
-            <button id="next-btn">Next</button>
-        </div>
+            <div class="score-area">
+                <p class="scores">Correct Answers <span id="score">0</span></p>
+                <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+            </div>
+        </div>    
 
-        <div class="score-area">
-            <p class="scores">Correct Answers <span id="score">0</span></p>
-            <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
-        </div>
-
-    </div>    
+     
 
 
     <script src="assets/js/script.js"></script>
