@@ -87,6 +87,10 @@ body {
     padding: 10px 20px;
 }
 
+.controls {
+    bottom: 600px;
+}
+
 /* .hide {
     display: none;
 } */
