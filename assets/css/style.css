@@ -108,9 +108,9 @@ body {
     font-weight: bold;
 }
 
-/* .hide {
+.hide {
     display: none;
-} */
+} 
 
 /* success and error alert */
 .success {
