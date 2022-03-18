@@ -25,7 +25,8 @@ This project is focused on a quiz app for kids to test their knowledge on the ju
 Our bible quiz is targeted at kids that has gone through a bible project lesson and may want to test their knowledge.
 
 ## Wireframes
-![Image Here]
+![Image Here](./docs/wireframes/web_wireframe.png)
+![Image Here](./docs/wireframes/mobile_wireframe.png)
 
 ## Features:
 <ul>

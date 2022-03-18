@@ -5,6 +5,7 @@
 
 const nextBtn = document.getElementById('next');
 const answer1Btn = document.getElementById('choice-buttons');
+const question = document.getElementById('question')
 
 // Event Listeners
 nextBtn.addEventListener('click', function (e) {
@@ -17,9 +18,9 @@ nextBtn.addEventListener('click', function (e) {
 answer1Btn.addEventListener('click', function (e) {
    console.log('Answer One', e.target);
    alert('You made a choice');
-//     if (questions[currentQuestion].correct == 1) {
-//         alert('You answered correctly.');
-//     }
+    // if (questions[currentQuestion].correct == 1) {
+    //     alert('You answered correctly.');
+    // }
 });
 
 
@@ -32,17 +33,22 @@ let questions = [
     { question: "The new testament has how many books?", choices: [14, 27, 39, 29], correct: 39 },
     { question: "The books of the Law is written by who?", choices: ['Elijah', 'Moses', 'Isaiah', 'Ezekiel'], correct: 'Moses'},  
 ];
-// displayQuestion(questions[0]);
+console.log('questions');
+
+
+// displayQuestion(questions[0]); {
+//     document.getElementById('question').innerHTML = questions[0];
+// }
 
 /**
  * Display the current question.
  * @param question the current question.
  */
-function displayQuestion(questions) {
-    document.getElementById('question').innerHTML = questions.title+questions.choices;
-}
+// function displayQuestion(questions) {
+//     document.getElementById('question').innerHTML = questions.title+questions.choices;
+// }
     
-let currentQuestion = 0;
+// let currentQuestion = 0;
 
 
 

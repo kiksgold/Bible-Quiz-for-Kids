@@ -15,7 +15,7 @@
 <body class="container">
         <h1 class="heading"> Bible Quiz for Kids</h1>
     
-    <div class="username"> 
+    <div id="username-container" class="username"> 
         <p> Enter your username</p>
         <input type="text" id="username" name="username" required>
     </div>       
@@ -23,16 +23,16 @@
     <div id="question-container" class="hide"> 
         <div id="question">Question</div>
         <div id="choice-buttons" class="btn-grid">
-            <button id="answer1"data-type= "wrong" class="btn">Choice 1</button>
-            <button id="answer2"data-type= "correct" class="btn">Choice2</button>
-            <button id="answer3"data-type= "wrong" class="btn">Choice 3</button>
-            <button id="answer4"data-type= "wrong"class="btn">Choice 4</button>
+            <button id="answer1"onclick="validateAnswer(this);" class="btn"></button>
+            <button id="answer2"onclick="validateAnswer(this);" class="btn"></button>
+            <button id="answer3"onclick="validateAnswer(this);" class="btn"></button>
+            <button id="answer4"onclick="validateAnswer(this);" class="btn"></button>
         </div>    
     </div>
         
     <div class="controls">
-        <button id="start" class="start-btn btn">Start</button>
-        <button id="next" class="next-btn btn">Next</button>
+        <button id="start" class="start-btn btn" onclick="startQuiz();">Start</button>
+        <button id="next" class="next-btn btn" onclick="nextQuestion();">Next</button>
     </div>
 
     <div class="score-area">
