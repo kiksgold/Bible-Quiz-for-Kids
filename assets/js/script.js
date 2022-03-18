@@ -1,39 +1,101 @@
+let username='',
+    questionId=0,
+    correctAnswer=0,
+    incorrectAnswer=0,
+    usernameCtrl=document.getElementById('username');
+
+    let questions = [
+            { question: "How many books does the bible have?", 
+            choices: [45, 66, 10, 105], 
+            correct: 66 },
+            { question: "The old testament has how many books?", 
+            choices: [39, 6, 13, 27], 
+            correct: 27 },
+            { question: "How many main divisions do we have in the bible?", 
+            choices: [10, 2, 8, 4], 
+            correct: 2 },
+            { question: "The new testament has how many books?", 
+            choices: [14, 27, 39, 29], 
+            correct: 39 },
+            { question: "The books of the Law is written by who?", 
+            choices: ['Elijah', 'Moses', 'Isaiah', 'Ezekiel'], 
+            correct: 'Moses'},  
+         ];
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Wait for the DOM to finish loading before running the Quiz
 // Get the button elements and add event listeners to them
 
 // constants
 
-const nextBtn = document.getElementById('next');
-const answer1Btn = document.getElementById('choice-buttons');
-const question = document.getElementById('question')
+// const nextBtn = document.getElementById('next');
+// const answer1Btn = document.getElementById('choice-buttons');
+// const question = document.getElementById('question')
 
-// Event Listeners
-nextBtn.addEventListener('click', function (e) {
-    console.log('Clicked next...')
-    alert('You clicked next');
-    // displayQuestion(questions[currentQuestion]);
-    // currentQuestion++;
-});
+// // Event Listeners
+// nextBtn.addEventListener('click', function (e) {
+//     console.log('Clicked next...')
+//     alert('You clicked next');
+//     // displayQuestion(questions[currentQuestion]);
+//     // currentQuestion++;
+// });
 
-answer1Btn.addEventListener('click', function (e) {
-   console.log('Answer One', e.target);
-   alert('You made a choice');
-    // if (questions[currentQuestion].correct == 1) {
-    //     alert('You answered correctly.');
-    // }
-});
+// answer1Btn.addEventListener('click', function (e) {
+//    console.log('Answer One', e.target);
+//    alert('You made a choice');
+//     // if (questions[currentQuestion].correct == 1) {
+//     //     alert('You answered correctly.');
+//     // }
+// });
 
 
-// variables
+// // variables
 
-let questions = [
-    { question: "How many books does the bible have?", choices: [45, 66, 10, 105], correct: 66 },
-    { question: "The old testament has how many books?", choices: [39, 6, 13, 27], correct: 27 },
-    { question: "How many main divisions do we have in the bible?", choices: [10, 2, 8, 4], correct: 2 },
-    { question: "The new testament has how many books?", choices: [14, 27, 39, 29], correct: 39 },
-    { question: "The books of the Law is written by who?", choices: ['Elijah', 'Moses', 'Isaiah', 'Ezekiel'], correct: 'Moses'},  
-];
-console.log('questions');
+// let questions = [
+//     { question: "How many books does the bible have?", choices: [45, 66, 10, 105], correct: 66 },
+//     { question: "The old testament has how many books?", choices: [39, 6, 13, 27], correct: 27 },
+//     { question: "How many main divisions do we have in the bible?", choices: [10, 2, 8, 4], correct: 2 },
+//     { question: "The new testament has how many books?", choices: [14, 27, 39, 29], correct: 39 },
+//     { question: "The books of the Law is written by who?", choices: ['Elijah', 'Moses', 'Isaiah', 'Ezekiel'], correct: 'Moses'},  
+// ];
+// console.log('questions');
 
 
 // displayQuestion(questions[0]); {

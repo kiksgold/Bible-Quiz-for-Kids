@@ -112,7 +112,14 @@ body {
     display: none;
 } */
 
+/* success and error alert */
+.success {
+    background-color: green;
+}
 
+.error {
+    background-color: red;
+}
 /* Media queries */
 /* For mobile devices */
 @media screen and (min-width: 390px) and (max-width:480px) {
