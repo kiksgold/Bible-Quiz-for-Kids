@@ -45,10 +45,12 @@ let username='',
         }
 
         function nextQuestion() {
-            // btn
-
-            // Display the next question
+        // Display the next question
             displayQuestion();
+
+        //Set the state of choices button
+        choicesState(false);
+    
         }
 
         /** Display the current question */
