@@ -2,6 +2,7 @@ let username='',
     questionID=0,
     correctAnswer=0,
     incorrectAnswer=0,
+    displayedQuestion = new Set(),
     usernameCtrl=document.getElementById('username');
 
     let questions = [
@@ -50,13 +51,11 @@ let username='',
 
         //Set the state of choices button
         choicesState(false);
-    
         }
 
         /** Display the current question */
-        function displayQuestion() {
-        // Check to make sure we do not display the same question multiple times.
 
+        function displayQuestion() {
         // Returns a random integer from 0 to length of questions array
          questionID = Math.floor(Math.random() * (questions.length ));
         let counter = 0,
@@ -72,23 +71,19 @@ let username='',
 
         // Set the state of the choices button
         choicesState(true);
-
         }
 
         function validateAnswer(Ctrl) {
         // Calculate and display the score
-        if ((Ctrl.innerHTML) === (questions[questionID].correct)) {
-            correctAnswer++;
+        if (Ctrl.innerHTML === questions[questionID].correct) {
+            document.getElementById('score').innerHTML = correctAnswer++;
             Ctrl.classList.add('correct'); 
             alert('You got the right answer!');
         } else {
-            incorrectAnswer++;
+            document.getElementById('incorrect').innerHTML = incorrectAnswer++;
             Ctrl.classList.add('wrong');
             alert('Awww... you answered wrongly')
             }
-
-        document.getElementById('score').innerHTML = correctAnswer;
-        document.getElementById('incorrect').innerHTML = incorrectAnswer;
         }
 
         function choicesState(state) {
