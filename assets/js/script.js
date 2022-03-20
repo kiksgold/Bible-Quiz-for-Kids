@@ -50,7 +50,7 @@ let username='',
 
         function nextQuestion() {
         // Display the next question
-            displayQuestion();
+        displayQuestion();
 
         //Set the state of choices button
         choicesState(false);
@@ -60,9 +60,17 @@ let username='',
 
         function displayQuestion() {
         // Returns a random integer from 0 to length of questions array
-         questionID = Math.floor(Math.random() * (questions.length ));
+         questionID = Math.floor(Math.random() * (questions.length));
         let counter = 0,
         currentQuestion = questions[questionID];
+
+        // Check to make sure we do not display the same question multiple times.
+        if (displayedQuestion.has(questionID)) {
+        displayQuestion();
+        }
+
+        // Add Values to the Set
+        displayedQuestion.add(questionID);
 
         // Write out the currently selected question
         document.getElementById('questionid').innerHTML = currentQuestion.question;
