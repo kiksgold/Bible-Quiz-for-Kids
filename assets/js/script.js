@@ -26,7 +26,7 @@ let username='',
 
        
         function startQuiz() {
-            //  username is required and must contain valid characters
+        //  username is required and must contain valid characters
             if (usernameCtrl.value.trim().length === 0) {
                 alert('Invalid Username!');
                 return;
@@ -36,7 +36,10 @@ let username='',
         displayQuestion();
 
         //  Hide the username container
-        document.getElementById('username-container').classList.add('hide');  
+        document.getElementById('username-container').classList.add('hide'); 
+        
+        // Hide the start button
+        document.getElementById('start').classList.add('hide');
 
         //  Show the question container
         document.getElementById('question-container').classList.remove('hide'); 
@@ -75,7 +78,8 @@ let username='',
 
         function validateAnswer(Ctrl) {
         // Calculate and display the score
-        if (Ctrl.innerHTML === questions[questionID].correct) {
+        
+        if (Ctrl.innerHTML.toString() === questions[questionID].correct.toString()) {
             document.getElementById('score').innerHTML = correctAnswer++;
             Ctrl.classList.add('correct'); 
             alert('You got the right answer!');
@@ -84,12 +88,17 @@ let username='',
             Ctrl.classList.add('wrong');
             alert('Awww... you answered wrongly')
             }
+
+        // Set the state of choices button
+            choicesState(true);
         }
 
         function choicesState(state) {
          for (let index = 1; index <= 4; index++) {
         const element = document.getElementById(`answer${index}`);
-        element.classList.remove('correct', 'wrong');
+        if (state === false) {
+            element.classList.remove('correct', 'wrong');
+        } 
         element.disabled = state;
     }
 }
