@@ -43,7 +43,7 @@ body {
    
 
 /* Style Question */
-#question {
+#questionid {
     font-weight: bold;
     font-size: 1.5rem;
     margin-top: 20px;
@@ -112,12 +112,12 @@ body {
     display: none;
 } 
 
-/* success and error alert */
-.success {
+/* correct and wrong alert */
+.correct {
     background-color: green;
 }
 
-.error {
+.wrong {
     background-color: red;
 }
 /* Media queries */

@@ -1,5 +1,5 @@
 let username='',
-    questionId=0,
+    questionID=0,
     correctAnswer=0,
     incorrectAnswer=0,
     usernameCtrl=document.getElementById('username');
@@ -30,6 +30,7 @@ let username='',
                 alert('Invalid Username!');
                 return;
             }
+
         // Display a random question to the user
         displayQuestion();
 
@@ -52,15 +53,15 @@ let username='',
 
         /** Display the current question */
         function displayQuestion() {
-            // Check to make sure we do not display the same question multiple times.
+        // Check to make sure we do not display the same question multiple times.
 
         // Returns a random integer from 0 to length of questions array
-         questionId = Math.floor(Math.random() * (questions.length - 1));
+         questionID = Math.floor(Math.random() * (questions.length ));
         let counter = 0,
-        currentQuestion = questions[questionId];
+        currentQuestion = questions[questionID];
 
         // Write out the currently selected question
-        document.getElementById('question').innerHTML = currentQuestion.question;
+        document.getElementById('questionid').innerHTML = currentQuestion.question;
 
         // Loop through and display the answers
         currentQuestion.choices.forEach(choice => {
@@ -74,12 +75,14 @@ let username='',
 
         function validateAnswer(Ctrl) {
         // Calculate and display the score
-        if (parseInt(Ctrl.innerHTML) === parseInt(questions[questionID].correct)) {
+        if ((Ctrl.innerHTML) === (questions[questionID].correct)) {
             correctAnswer++;
-            Ctrl.classList.add('success');
+            Ctrl.classList.add('correct'); 
+            alert('You got the right answer!');
         } else {
             incorrectAnswer++;
-            Ctrl.classList.add('error');
+            Ctrl.classList.add('wrong');
+            alert('Awww... you answered wrongly')
             }
 
         document.getElementById('score').innerHTML = correctAnswer;
@@ -89,7 +92,7 @@ let username='',
         function choicesState(state) {
          for (let index = 1; index <= 4; index++) {
         const element = document.getElementById(`answer${index}`);
-        element.classList.remove('success', 'error');
+        element.classList.remove('correct', 'wrong');
         element.disabled = state;
     }
 }
