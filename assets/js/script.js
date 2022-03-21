@@ -61,16 +61,16 @@ let username='',
         function displayQuestion() {
         // Returns a random integer from 0 to length of questions array
          questionID = Math.floor(Math.random() * (questions.length));
-        let counter = 0,
+        // let counter = 0,
         currentQuestion = questions[questionID];
 
         // Check to make sure we do not display the same question multiple times.
-        if (displayedQuestion.has(questionID)) {
-        displayQuestion();
-        }
+        // if (displayedQuestion.has(questionID)) {
+        // displayQuestion();
+        // }
 
-        // Add Values to the Set
-        displayedQuestion.add(questionID);
+        // // Add Values to the Set
+        // displayedQuestion.add(questionID);
 
         // Write out the currently selected question
         document.getElementById('questionid').innerHTML = currentQuestion.question;
@@ -83,6 +83,8 @@ let username='',
         // Set the state of the choices button
         choicesState(true);
         }
+
+        // isEndQuiz(),
 
         function validateAnswer(Ctrl) {
         // Calculate and display the score
@@ -99,6 +101,8 @@ let username='',
 
         // Set the state of choices button
             choicesState(true);
+
+            isEndQuiz();
         }
 
         function choicesState(state) {
@@ -111,6 +115,11 @@ let username='',
     }
 }
 
+        // function isEndQuiz() {
+        //     if (displayQuestion === 5) {
+        //         alert('End of Quiz');
+        //     }
+        // }
 
 
 
