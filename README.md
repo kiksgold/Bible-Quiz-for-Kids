@@ -84,6 +84,19 @@ Our bible quiz is targeted at kids that has gone through a bible project lesson 
 ## Challenge / Bugs
 
 ## Validator Testing
+<ul>
+<li>HTML </li>
+<ul>
+<li> No errors were returned when passing through the official W3C validator. </li>
+</ul>
+<li>CSS </li>
+<ul>
+<li> No errors were returned when passing through the official W3C validator. </li>
+</ul>
+<li>JavaScripts</li>
+<ul>
+<li>  </li>
+</ul>
 
 ## Deployment
 

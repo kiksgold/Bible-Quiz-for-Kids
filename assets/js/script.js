@@ -65,12 +65,15 @@ let username='',
         currentQuestion = questions[questionID];
 
         // Check to make sure we do not display the same question multiple times.
-        if (displayedQuestion.has(questionID)) {
-        displayQuestion();
-        }
+        // if (displayedQuestion.has(questionID)) {
+        // displayQuestion();
+        // }
+
+        // let randomNumbers = new Set, displayQuestion;
+
 
         // Add Values to the Set
-        displayedQuestion.add(questionID);
+        // displayedQuestion.add(questionID);
 
         // Write out the currently selected question
         document.getElementById('questionid').innerHTML = currentQuestion.question;
@@ -100,7 +103,7 @@ let username='',
         // Set the state of choices button
             choicesState(true);
 
-        isEndQuiz();
+        // isEndQuiz();
         }
 
         function choicesState(state) {
@@ -113,11 +116,11 @@ let username='',
     }
 }
 
-        function isEndQuiz() {
-             if (displayQuestion === 5) {
-               alert('End of Quiz');
-            }
-         }
+        // function isEndQuiz() {
+        //      if (displayQuestion === 5) {
+        //        alert('End of Quiz');
+        //     }
+        //  }
 
 
 
