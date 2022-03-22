@@ -1,128 +1,128 @@
-let username='',
-    questionID=0,
-    correctAnswer=0,
-    incorrectAnswer=0,
-    displayedQuestion = new Set(),
-    usernameCtrl=document.getElementById('username');
+// set the variables for the functions.
 
-    let questions = [
-            { question: "How many books does the bible have?", 
-            choices: [45, 66, 10, 105], 
-            correct: 66 },
-            { question: "The old testament has how many books?", 
-            choices: [39, 6, 13, 27], 
-            correct: 27 },
-            { question: "How many main divisions do we have in the bible?", 
-            choices: [10, 2, 8, 4], 
-            correct: 2 },
-            { question: "The new testament has how many books?", 
-            choices: [14, 27, 39, 29], 
-            correct: 39 },
-            { question: "The books of the Law is written by who?", 
-            choices: ['Elijah', 'Moses', 'Isaiah', 'Ezekiel'], 
-            correct: 'Moses'},  
-         ];
+let username = '',
+    questionID = 0,
+    correctAnswer = 0,
+    incorrectAnswer = 0,
+    usernameCtrl = document.getElementById('username');
+
+// Save currentAnswer as a global variable 
+let currentAnswer = '';
+
+let questions = [{
+        question: "How many books does the bible have?",
+        choices: [45, 66, 10, 105],
+        correct: 66
+    },
+    {
+        question: "The old testament has how many books?",
+        choices: [39, 6, 13, 27],
+        correct: 27
+    },
+    {
+        question: "How many main divisions do we have in the bible?",
+        choices: [10, 2, 8, 4],
+        correct: 2
+    },
+    {
+        question: "The new testament has how many books?",
+        choices: [14, 27, 39, 29],
+        correct: 39
+    },
+    {
+        question: "The books of the Law is written by who?",
+        choices: ['Elijah', 'Moses', 'Isaiah', 'Ezekiel'],
+        correct: 'Moses'
+    },
+];
 
 
-       
-        function startQuiz() {
-        //  username is required and must contain valid characters
-            if (usernameCtrl.value.trim().length === 0) {
-                alert('Invalid Username!');
-                return;
-            }
 
-        // Display a random question to the user
-        displayQuestion();
+function startQuiz() {
+    //  username is required and must contain valid characters
+    if (usernameCtrl.value.trim().length === 0) {
+        alert('Invalid Username!');
+        return;
+    }
 
-        //  Hide the username container
-        document.getElementById('username-container').classList.add('hide'); 
-        
-        // Hide the start button
-        document.getElementById('start').classList.add('hide');
+    // Display a random question to the user
+    displayQuestion();
 
-        //  Show the question container
-        document.getElementById('question-container').classList.remove('hide'); 
-        
-        // Set the state of choices button
-        choicesState(false);
-        }
+    //  Hide the username container
+    document.getElementById('username-container').classList.add('hide');
 
-        function nextQuestion() {
-        // Display the next question
-        displayQuestion();
+    // Hide the start button
+    document.getElementById('start').classList.add('hide');
 
-        //Set the state of choices button
-        choicesState(false);
-        }
+    //  Show the question container
+    document.getElementById('question-container').classList.remove('hide');
 
-        /** Display the current question */
+    // Set the state of choices button
+    choicesState(false);
+}
 
-        function displayQuestion() {
-        // Returns a random integer from 0 to length of questions array
-         questionID = Math.floor(Math.random() * (questions.length));
-        let counter = 0,
+function nextQuestion() {
+    // Display the next question
+    displayQuestion();
+
+    //Set the state of choices button
+    choicesState(false);
+}
+
+/** Display the current question */
+
+function displayQuestion() {
+    // Returns a random integer from 0 to length of questions array
+    questionID = Math.floor(Math.random() * (questions.length));
+    let counter = 0,
         currentQuestion = questions[questionID];
 
-        // Check to make sure we do not display the same question multiple times.
-        // if (displayedQuestion.has(questionID)) {
-        // displayQuestion();
-        // }
+    document.getElementById('questionid').innerHTML = currentQuestion.question;
 
-        // let randomNumbers = new Set, displayQuestion;
-
-
-        // Add Values to the Set
-        // displayedQuestion.add(questionID);
-
-        // Write out the currently selected question
-        document.getElementById('questionid').innerHTML = currentQuestion.question;
-
-        // Loop through and display the answers
-        currentQuestion.choices.forEach(choice => {
+    // Loop through and display the answers
+    currentQuestion.choices.forEach(choice => {
         document.getElementById(`answer${++counter}`).innerHTML = choice;
-        });
+    });
 
-        // Set the state of the choices button
-        choicesState(true);
-        }
+    // Set the state of the choices button
+    choicesState(true);
 
-        function validateAnswer(Ctrl) {
-        // Calculate and display the score
-        
-        if (Ctrl.innerHTML.toString() === questions[questionID].correct.toString()) {
-            document.getElementById('score').innerHTML = correctAnswer++;
-            Ctrl.classList.add('correct'); 
-            alert('You got the right answer!');
-        } else {
-            document.getElementById('incorrect').innerHTML = incorrectAnswer++;
-            Ctrl.classList.add('wrong');
-            alert('Awww... you answered wrongly')
-            }
+    // Check to make sure we do not display the same question multiple times.
+    currentAnswer = questions[questionID].correct.toString();
+    questions.splice(questionID, 1)
+}
 
-        // Set the state of choices button
-            choicesState(true);
+function validateAnswer(Ctrl) {
+    // Calculate and display the score
 
-        // isEndQuiz();
-        }
+    if (Ctrl.innerHTML.toString() === currentAnswer) {
+        document.getElementById('score').innerHTML = correctAnswer++;
+        Ctrl.classList.add('correct');
+        alert('You got the right answer!');
+    } else {
+        document.getElementById('incorrect').innerHTML = incorrectAnswer++;
+        Ctrl.classList.add('wrong');
+        alert('Awww... you answered wrongly')
+    }
 
-        function choicesState(state) {
-         for (let index = 1; index <= 4; index++) {
+    // Set the state of choices button
+    choicesState(true);
+
+    // isEndQuiz();
+}
+
+function choicesState(state) {
+    for (let index = 1; index <= 4; index++) {
         const element = document.getElementById(`answer${index}`);
         if (state === false) {
             element.classList.remove('correct', 'wrong');
-        } 
+        }
         element.disabled = state;
     }
 }
 
-        // function isEndQuiz() {
-        //      if (displayQuestion === 5) {
-        //        alert('End of Quiz');
-        //     }
-        //  }
-
-
-
-
-
+// function isEndQuiz() {
+//      if (displayQuestion === 5) {
+//       alert('End of Quiz');
+//     }
+//   }
