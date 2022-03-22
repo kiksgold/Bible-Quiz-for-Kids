@@ -6,11 +6,12 @@ body {
     font-family: Roboto, Lato, sans-serif;
     color: rgba(0, 0, 0, 0.582);
     text-align: center;
+    font-weight: bold;
 }
 
 /* heading */
 .heading {
-    color: rgb(5, 48, 48);
+    color: black;
     text-align: center;
     font-size: 2.5rem;
     margin-top: 150px;

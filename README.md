@@ -2,8 +2,8 @@
 
 This project is focused on a quiz app for kids to test their knowledge on the just concluded bible project.
 
-<p> The users should be able to get an average score if they have have truly taken the lessons </p>
-<p> The idea behind the quiz is to test their knowledge on the short bible project. </p>
+<p>The users should be able to get an average score if they have have truly taken the lessons</p>
+<p>The idea behind the quiz is to test their knowledge on the short bible project.</p>
 
 ! [link here]
 
@@ -80,8 +80,18 @@ Our bible quiz is targeted at kids that has gone through a bible project lesson 
 </ul>
 
 ## Testing
+<ul>
+<li> The quiz works in different browser; Chrome, Safari, and my mobile device (iPhone11). </li>
+<li> I confirm that this quiz is responsive, looks good and functions on all standard screen sizes using devtools device toolbar. </li>
+<li> I have used the http://ami.responsivedesign.is/ website to check the render on different sceens. </li>
+<li> I have tested that the header, quiz area, control buttons and score area works well </li>
+</ul>
 
 ## Challenge / Bugs
+### Solved Bugs
+<li>My questions were repeating multiple times, i was able to use the splice method on my question array to display a question once</li>
+<li>On completing that, my choice buttons were given the wrong answer, I then set a global variable for currentAnswer</li>
+<li>My score area was counting from zero</li>
 
 ## Validator Testing
 <ul>
@@ -95,11 +105,21 @@ Our bible quiz is targeted at kids that has gone through a bible project lesson 
 </ul>
 <li>JavaScripts</li>
 <ul>
-<li>  </li>
+<li>No errors were returned when passed through JSHint Validator </li>
 </ul>
 
 ## Deployment
+The site was deployed to GitHub Page. The following steps were taken for deployment:
+<ul>
+<li> I created a repository on mygithub </li>
+<li> I have saved, commited and pushed every changes to github.</li>
+<li>In the github repository I navigated to the settings tab </li> 
+<li> I used the drop-down menu to select master branch as a publishing source and saved it. </li>
+<li> Refreshed the github page, and a link was provided to the completed website
 
 ## Credits
-
+<li>Tutor Support</li>
+<li>w3schools</li>
+<li>Youtube Videos</li>
 ## Media
+<li>No media was used</li>
