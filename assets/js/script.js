@@ -57,6 +57,9 @@ function startQuiz() {
     //  Show the question container
     document.getElementById('question-container').classList.remove('hide');
 
+    //  Show the next button
+    document.getElementById('next').classList.remove('hide');
+
     // Set the state of choices button
     choicesState(false);
 }
@@ -84,6 +87,12 @@ function displayQuestion() {
         document.getElementById(`answer${++counter}`).innerHTML = choice;
     });
 
+    if(questions.length > questionID){
+        document.getElementById('restart').classList.add('hide');
+         } else {
+             document.getElementById('restart').classList.remove('hide');
+         }
+
     // Set the state of the choices button
     choicesState(true);
 
@@ -96,11 +105,11 @@ function validateAnswer(Ctrl) {
     // Calculate and display the score
 
     if (Ctrl.innerHTML.toString() === currentAnswer) {
-        document.getElementById('score').innerHTML = correctAnswer++;
+        document.getElementById('score').innerHTML = ++correctAnswer;
         Ctrl.classList.add('correct');
         alert('You got the right answer!');
     } else {
-        document.getElementById('incorrect').innerHTML = incorrectAnswer++;
+        document.getElementById('incorrect').innerHTML = ++incorrectAnswer;
         Ctrl.classList.add('wrong');
         alert('Awww... you answered wrongly')
     }
@@ -108,7 +117,7 @@ function validateAnswer(Ctrl) {
     // Set the state of choices button
     choicesState(true);
 
-    // isEndQuiz();
+
 }
 
 function choicesState(state) {
@@ -121,8 +130,3 @@ function choicesState(state) {
     }
 }
 
-// function isEndQuiz() {
-//      if (displayQuestion === 5) {
-//       alert('End of Quiz');
-//     }
-//   }
