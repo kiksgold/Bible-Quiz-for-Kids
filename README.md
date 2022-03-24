@@ -5,20 +5,19 @@ This project is focused on a quiz app for kids to test their knowledge on the ju
 <p>The users should be able to get an average score if they have have truly taken the lessons</p>
 <p>The idea behind the quiz is to test their knowledge on the short bible project.</p>
 
-! [link here]
+https://kiksgold.github.io/Bible-Quiz-for-Kids/
 
-![ImageHere]
+![ImageHere](./docs/features/amiresponsive.png)
 
 ## Our Main goal:
 <ul>
-<li> to ascertain the effectiveness of the bible lesson
+<li> to ascertain the effectiveness of the bible project lesson.
 <li> to test the kids knowledge
 </ul>
 
 ### Content Strategy
 <ul>
 <li> user-friendly
-<li> stand-out design with beautiful colors
 <li> easy to use navigations
 </ul>
 
@@ -91,7 +90,7 @@ Our bible quiz is targeted at kids that has gone through a bible project lesson 
 ### Solved Bugs
 <li>My questions were repeating multiple times, i was able to use the splice method on my question array to display a question once</li>
 <li>On completing that, my choice buttons were given the wrong answer, I then set a global variable for currentAnswer</li>
-<li>My score area was counting from zero</li>
+<li>My score area was counting from zero, i realized that my counter was not properly aligned</li>
 
 ## Validator Testing
 <ul>
@@ -107,6 +106,7 @@ Our bible quiz is targeted at kids that has gone through a bible project lesson 
 <ul>
 <li>No errors were returned when passed through JSHint Validator </li>
 </ul>
+</ul>
 
 ## Deployment
 The site was deployed to GitHub Page. The following steps were taken for deployment:
@@ -117,9 +117,15 @@ The site was deployed to GitHub Page. The following steps were taken for deploym
 <li> I used the drop-down menu to select master branch as a publishing source and saved it. </li>
 <li> Refreshed the github page, and a link was provided to the completed website
 
+https://kiksgold.github.io/Bible-Quiz-for-Kids/
+</ul>
+
 ## Credits
+<ul>
 <li>Tutor Support</li>
 <li>w3schools</li>
 <li>Youtube Videos</li>
+</ul>
+
 ## Media
 <li>No media was used</li>
