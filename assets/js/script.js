@@ -1,5 +1,4 @@
 // set the variables for the functions.
-
 let username = '',
     questionID = 0,
     correctAnswer = 0,
@@ -9,6 +8,7 @@ let username = '',
 // Save currentAnswer as a global variable 
 let currentAnswer = '';
 
+// Set the questions using an array.
 let questions = [{
         question: "How many books does the bible have?",
         choices: [45, 66, 10, 105],
@@ -35,8 +35,6 @@ let questions = [{
         correct: 'Moses'
     },
 ];
-
-
 
 function startQuiz() {
     //  username is required and must contain valid characters
@@ -73,7 +71,6 @@ function nextQuestion() {
 }
 
 /** Display the current question */
-
 function displayQuestion() {
     // Returns a random integer from 0 to length of questions array
     questionID = Math.floor(Math.random() * (questions.length));
@@ -86,12 +83,6 @@ function displayQuestion() {
     currentQuestion.choices.forEach(choice => {
         document.getElementById(`answer${++counter}`).innerHTML = choice;
     });
-
-    if(questions.length > questionID){
-        document.getElementById('restart').classList.add('hide');
-         } else {
-             document.getElementById('restart').classList.remove('hide');
-         }
 
     // Set the state of the choices button
     choicesState(true);
@@ -116,8 +107,6 @@ function validateAnswer(Ctrl) {
 
     // Set the state of choices button
     choicesState(true);
-
-
 }
 
 function choicesState(state) {
@@ -129,4 +118,3 @@ function choicesState(state) {
         element.disabled = state;
     }
 }
-

@@ -139,13 +139,11 @@ body {
     }
 }
 
-
-/* 
- For larger screen  
+ /* For larger screen   */
 @media screen and (max-width:1500px) {
     #question-container {
         position: absolute;
-        left: 450px; 
+        left: 250px; 
         height: 250px;
         width: 800px;
         max-width: 80%;
@@ -154,4 +152,4 @@ body {
         justify-content: center;
     }
 }  
-  */
+  
