@@ -123,7 +123,8 @@ function choicesState(state) {
 
 function isEndQuiz() {
     if (parseInt(correctAnswer) + parseInt(incorrectAnswer) === 5) {
-        alert('END OF QUIZ');
+        alert('END OF QUIZ! Refresh to start over');
+        document.getElementById('next').classList.add('hide');
         return true;
     }
     return false;
