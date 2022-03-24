@@ -17,7 +17,7 @@ let questions = [{
     {
         question: "The old testament has how many books?",
         choices: [39, 6, 13, 27],
-        correct: 27
+        correct: 39
     },
     {
         question: "How many main divisions do we have in the bible?",
@@ -27,7 +27,7 @@ let questions = [{
     {
         question: "The new testament has how many books?",
         choices: [14, 27, 39, 29],
-        correct: 39
+        correct: 27
     },
     {
         question: "The books of the Law is written by who?",
@@ -129,3 +129,4 @@ function isEndQuiz() {
     }
     return false;
 }
+
