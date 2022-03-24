@@ -138,8 +138,8 @@ body {
         justify-content: center;
     }
 }
-
- /* For larger screen   */
+/* 
+  For larger screen   
 @media screen and (max-width:1500px) {
     #question-container {
         position: absolute;
@@ -152,4 +152,4 @@ body {
         justify-content: center;
     }
 }  
-  
+    */
