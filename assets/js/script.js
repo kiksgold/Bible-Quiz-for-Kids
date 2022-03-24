@@ -63,11 +63,13 @@ function startQuiz() {
 }
 
 function nextQuestion() {
-    // Display the next question
-    displayQuestion();
+    if (!isEndQuiz()) {
+        // Display the next question
+        displayQuestion();
 
-    //Set the state of choices button
-    choicesState(false);
+        //Set the state of choices button
+        choicesState(false);
+    }
 }
 
 /** Display the current question */
@@ -117,4 +119,12 @@ function choicesState(state) {
         }
         element.disabled = state;
     }
+}
+
+function isEndQuiz() {
+    if (parseInt(correctAnswer) + parseInt(incorrectAnswer) === 5) {
+        alert('END OF QUIZ');
+        return true;
+    }
+    return false;
 }
